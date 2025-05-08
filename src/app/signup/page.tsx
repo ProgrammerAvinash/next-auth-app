@@ -21,6 +21,7 @@ export default function Signup() {
   const onSignup = async () => {
     try {
       setLoading(true);
+      console.log("Signup clicked", user);
       const response = await axios.post("/api/users/signup", user);
       console.log("Signup success", response.data);
       router.push("/login");
@@ -70,7 +71,7 @@ export default function Signup() {
           Email
         </label>
         <input
-          className="w-[300px] h-[40px] p-1 m-1 text-lg  w-full"
+          className="w-[300px] h-[40px] p-1 m-1 text-lg w-fu "
           id="Email"
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           type="text"

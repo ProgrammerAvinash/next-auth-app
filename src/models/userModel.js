@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, "Please provide a username"],
@@ -8,24 +8,23 @@ export const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: [true, "Please provide an email"],
+    required: [true, "Please provide a email"],
     unique: true,
-    match: [/.+@.+\..+/, "Please provide a valid email"],
   },
-  Password: {
+  password: {
     type: String,
     required: [true, "Please provide a password"],
+  },
+  isVerfied: {
+    type: Boolean,
+    default: false,
   },
   isAdmin: {
     type: Boolean,
     default: false,
   },
-  isVerified: {
-    type: Boolean,
-    default: false,
-  },
   forgotPasswordToken: String,
-  forgotPasswordExpiry: Date,
+  forgotPasswordTokenExpiry: Date,
   verifyToken: String,
   verifyTokenExpiry: Date,
 });
