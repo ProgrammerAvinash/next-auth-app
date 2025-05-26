@@ -42,7 +42,7 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="font-bold text-2xl">{loading ? "loading" : "Login"}</h1>
-      <div className="alignContent p-1.5 width-half">
+      <div className="alignContent p-5 width-half border-2 border-gray-300 rounded-lg shadow-lg">
         <div>
           <label htmlFor="email">Email</label>
           <input
@@ -51,19 +51,19 @@ export default function LoginPage() {
             placeholder="Enter Email"
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
-            className="p-1.5 m-1 border-0 w-full"
+            className="p-1.5 m-1 border-b  w-full"
           />
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <input
               type="password"
               id="password"
               onChange={(e) => setUser({ ...user, password: e.target.value })}
               value={user.password}
               placeholder="Enter Password"
-              className="p-1.5 m-1 border-0 w-full"
+              className="p-1.5 m-1 border-b w-full"
             />
             <button onClick={() => setPass(!pass)}>
               {!pass ? <FaEye className="" /> : <FaEyeSlash />}
